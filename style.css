@@ -1,0 +1,22 @@
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    /* min-width: 130px; */
+    /* display: inline-block; */
+    margin: 5px 0px;
+  }
+.container {
+    width: 320px;
+    background-color: rgb(194, 191, 191);
+    padding: 10px;
+}
+button {
+    cursor: pointer;
+}
+.msg-alert {
+    font-size: 18px;
+    color: rgb(214, 55, 214);
+  }

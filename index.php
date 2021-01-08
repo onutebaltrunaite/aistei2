@@ -17,6 +17,7 @@ var_dump($users);
 <body>
 
 <div class="container">
+    <h3>ADD NEW USER</h3>
     <form action="" method="POST" autocomplete="off">
         <div class="input-group">
             <label for="email">El. paštas</label>

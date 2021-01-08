@@ -20,7 +20,6 @@ $emailErr = '';
 
 $msg = '';
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // echo 'forma issiusta';
 
@@ -38,18 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     var_dump($user['email']);
                     var_dump($user['password']);
                     if ($user['email'] === $email && $user['password'] === $password){
-                        $msg = 'prisiloginta';
+                        $msg = 'Toks vartotojas jau egzistuoja';
                         return;
                     } else {
-                        $msg = 'neteisingas pastas arba slaptazodis';
+                        $newUser = [
+                            'email' => "$email",
+                            'password' => "$password"
+                        ];
+                        $users[] = $newUser;
+                        $msg = 'Naujas vartotojas sukurtas';
+                        return;
                     }               
                 }
-
             }
         } else {
             $msg = 'Nesutampa slaptazodziai';
         }
-
     }
 }
 

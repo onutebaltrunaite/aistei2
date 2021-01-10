@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $users = [
     [
@@ -32,24 +33,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($_POST['password'] === $_POST['passwordRepeat']){
             $password = ($_POST['password']);
 
-            foreach($users as $user){
-                foreach($user as $value){
-                    var_dump($user['email']);
-                    var_dump($user['password']);
-                    if ($user['email'] === $email && $user['password'] === $password){
-                        $msg = 'Toks vartotojas jau egzistuoja';
-                        return;
-                    } else {
-                        $newUser = [
-                            'email' => "$email",
-                            'password' => "$password"
-                        ];
-                        $users[] = $newUser;
-                        $msg = 'Naujas vartotojas sukurtas';
-                        return;
-                    }               
-                }
-            }
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            Header('Location: sess.php');
+            // foreach($users as $user){
+            //     foreach($user as $value){
+            //         var_dump($user['email']);
+            //         var_dump($user['password']);
+            //         if ($user['email'] === $email && $user['password'] === $password){
+            //             $msg = 'Toks vartotojas jau egzistuoja';
+            //             return;
+            //         } else {
+            //             $newUser = [
+            //                 'email' => "$email",
+            //                 'password' => "$password"
+            //             ];
+            //             $users[] = $newUser;
+            //             $msg = 'Naujas vartotojas sukurtas';
+            //             return;
+            //         }               
+            //     }
+            // }
         } else {
             $msg = 'Nesutampa slaptazodziai';
         }
@@ -64,6 +68,28 @@ function showInputMsg($message)
         return "<p class='msg-alert'>$message</p>";
     }
 }
+
+
+
+
+// SU SESSION KAZKAS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

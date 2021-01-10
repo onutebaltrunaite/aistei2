@@ -5,6 +5,7 @@ var_dump($users);
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@ var_dump($users);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<?php require('./inc/nav.php'); ?>
 <div class="container">
     <h3>ADD NEW USER</h3>
     <form action="" method="POST" autocomplete="off">
@@ -39,6 +40,7 @@ var_dump($users);
         <button type='submit'>Prisijungti</button>
     </form>    
 </div>
+
 
 
 

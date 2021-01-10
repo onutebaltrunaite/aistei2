@@ -1,4 +1,4 @@
 <nav>
-        <a href="sess.php">session</a>
-        <a href="index.php">form</a>
+        <a href="home.php">HOME</a>
+        <a href="index.php">LOGIN</a>
 </nav>

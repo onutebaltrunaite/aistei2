@@ -1,6 +1,7 @@
 <?php 
 require('./functions.php');
 
+
 var_dump($_SESSION);
 
 $name = '';
@@ -15,7 +16,6 @@ if ($now > $_SESSION['expire']){
     Header('Location: index.php');
 }
 
-// goingBackToLogin();
 
 ?>
 
@@ -32,11 +32,14 @@ if ($now > $_SESSION['expire']){
     <?php require('./inc/nav.php'); ?>
     <h1>Welcome back,  <?php echo $name; ?></h1>
 
-
-
-
-
-
-
+    <script>
+        function goingBackToLogin(){
+            setTimeout(function(){window.location.href = "index.php";}, 10000);
+        }
+        goingBackToLogin();
+    </script>
+        
 </body>
 </html>
+
+

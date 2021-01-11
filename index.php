@@ -31,7 +31,7 @@ var_dump($users);
 
         <?php echo showInputMsg($msg); ?>
 
-        <button type='submit'>Prisijungti</button>
+        <button id="submit" type='submit'>Prisijungti</button>
     </form>    
 </div>
 

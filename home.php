@@ -1,6 +1,6 @@
 <?php 
 require('./functions.php');
-require('./timer.js');
+
 var_dump($_SESSION);
 
 $name = '';
